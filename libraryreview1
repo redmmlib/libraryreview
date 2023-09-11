@@ -1,0 +1,19 @@
+import requests
+import json
+
+params = {
+    "query": "東京 大田区 図書館",
+    "key":"APIキー"
+    "region" : "jp",
+    "language" : "ja",
+    }
+
+url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+
+res = requests.get(url, params= params)
+place = json.loads(res.text)
+print(place)
+
+
+import gspread
+from google.oauth2.service_account import Credentials
